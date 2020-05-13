@@ -1,0 +1,24 @@
+-Create MySQL database called bamazon
+-Create table in database called products, with columns item id, product_name, department_name, price, and stock_quantity.
+-Populate database with 10 products (seeds file.  will also have schema).
+
+Customer View:
+
+-Create bamazonCustomer.js
+-Install and require mysql and inquirer
+-Set up connection to database
+-Open connection to database
+-Run start()
+
+start():
+-Prompt "What is the ID of the product that you would like to order?"
+-Prompt "How many units of this product would you like to buy?
+-If answer.units > stock_quantity, console.log "Insufficient qty" message and close connection.
+-If answer.units <= stock_quantity,
+-Create var newQuantity = stock_quantity - units
+-Update stock_quantity where id = answer.id to newQuantity
+-Create var orderTotal = answer.units * item price
+-Console.log "Total amount due: " + orderTotal
+-End connection 
+
+----------------------------------------------------
