@@ -28,3 +28,20 @@ ALL ITEMS DONE - start():
 
 
 ----------------------------------------------------
+
+Assistant Manager View:
+
+menu():
+-Prompt "Please choose an option: View Products For Sale, View Low Inventory"
+-If View Products, viewAll()
+-if View low inventory, display all where stock_quantity < 10, all columns
+
+viewAll():
+-Select all from products
+-Display all items, all columns
+-End Connection
+
+viewLow():
+-Select all from products where stock_quantity < 10
+-Display all columns
+-End Connection

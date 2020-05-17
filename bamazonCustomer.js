@@ -54,11 +54,14 @@ function start() {
        function(err, response) {
          if (err) throw err;
          if (answer.quantity > response[0].stock_quantity) {
+             console.log("Current stock quantity: " + response[0].stock_quantity);
              console.log("Insufficient Quantity!!");
              connection.end(); 
          }
          else {
             var newQuantity = response[0].stock_quantity - answer.quantity;
+            console.log("Old stock quantity: " + response[0].stock_quantity)
+            console.log("New stock quantity: " + newQuantity)
             connection.query(
                 "UPDATE products SET ? WHERE ?",
                 [
