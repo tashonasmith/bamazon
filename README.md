@@ -12,6 +12,6 @@ Customer View:
 
 Assistant Manager View:
 1. For Assistant Manager access (more limited than Manager), type `node bamazonAssistantMgr.js` into the terminal.
-2. You will be given the option to either detailed information for all products, or just for low inventory items.  Use arrow keys to select the option you prefer, and the requested information will be displayed.
+2. You will be given the option to view either detailed information for all products, or just for low inventory items.  Use arrow keys to select the option you prefer, and the requested information will be displayed.
 
 --Here is a YouTube link to view MySQL database creation and Bamazon CLI in action! [Link to YouTube](https://youtu.be/_rH6BeDUo6Y)
