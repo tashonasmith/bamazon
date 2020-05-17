@@ -30,8 +30,56 @@ function displayAll() {
                 console.log("Price: " + response[i].price)
                 console.log("------------------------------");
             }
-            //start();
+            start();
         }); 
         
     
+};
+
+function start() {
+   inquirer.prompt([
+       {
+           name: "id",
+           type: "input",
+           message:  "What is the ID of the item that you would like to order?"
+       },
+       {
+           name: "quantity",
+           type: "input",
+           message: "How many units of this item would you like to order?"
+       }
+   ]) 
+   .then(function(answer) {
+       connection.query("SELECT * FROM `products` WHERE `item_id` =?", answer.id,
+       function(err, response) {
+         if (err) throw err;
+         if (answer.quantity > response[0].stock_quantity) {
+             console.log("Insufficient Quantity!!");
+             connection.end(); 
+         }
+         else {
+            var newQuantity = response[0].stock_quantity - answer.quantity;
+            connection.query(
+                "UPDATE products SET ? WHERE ?",
+                [
+                    {
+                        stock_quantity: newQuantity
+                    
+                    },
+                    {
+                        item_id: answer.id
+                    }
+                ],
+                function(err, res) {
+                    if (err) throw err;
+                    var orderTotal = answer.quantity * response[0].price;
+                    console.log("Total amount due: " + orderTotal);
+                    console.log("Order Complete!  Order confirmation will be emailed shortly.")
+                    connection.end();  
+                }
+            )
+         };
+    
+       });
+   });
 };
