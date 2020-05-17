@@ -1,16 +1,22 @@
--Create MySQL database called bamazon
--Create table in database called products, with columns item id, product_name, department_name, price, and stock_quantity.
--Populate database with 10 products (seeds file.  will also have schema).
+DONE-Create MySQL database called bamazon
+DONE-Create table in database called products, with columns item id, product_name, department_name, price, and stock_quantity.
+DONE-Populate database with 10 products (seeds file.  will also have schema).
 
 Customer View:
 
--Create bamazonCustomer.js
--Install and require mysql and inquirer
--Set up connection to database
--Open connection to database
+DONE-Create bamazonCustomer.js
+DONE-Install and require mysql and inquirer
+DONE-Set up connection to database
+DONE-Open connection to database
+-Run displayAll()
+
+DONE-displayAll()
+DONE-Select all from products
+DONE-Write for loop to display IDs, names, and prices for all products
 -Run start()
 
 start():
+-Display all items
 -Prompt "What is the ID of the product that you would like to order?"
 -Prompt "How many units of this product would you like to buy?
 -If answer.units > stock_quantity, console.log "Insufficient qty" message and close connection.
